@@ -1,5 +1,11 @@
-def even_num(a):
-    return [i for i in range(0,a,2)]
+from pyspark import sql
+from pyspark.sql import functions
+from pyspark.sql import SparkSession
 
-print(even_num(int(input("Enter the num:"))))
-print("DOne")
+spark = SparkSession \
+    .builder \
+    .appName("Python Spark SQL basic example") \
+    .config("spark.some.config.option", "some-value") \
+    .getOrCreate()
+
+print(spark)
